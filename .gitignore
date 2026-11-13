@@ -19,6 +19,9 @@ runs/
 checkpoints/
 *.pt
 
+# Frozen M1.5 eval corpora must stay versioned (never regenerated in place)
+!evals/*.bin
+
 # Experiment store
 *.db
 
