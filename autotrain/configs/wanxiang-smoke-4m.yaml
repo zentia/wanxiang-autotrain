@@ -1,0 +1,33 @@
+experiment: wanxiang-smoke-4m
+seed: 42
+
+data:
+  mix: mix_smoke
+  seq_len: 256
+  val_fraction: 0.02
+
+model:
+  layers: 6
+  dim: 384
+  heads: 6
+  vocab_size: 8192
+
+train:
+  global_batch_tokens: 65536
+  lr_peak: 1.0e-3
+  warmup_steps: 50
+  max_steps: 500
+  precision: fp32
+  ckpt_every_steps: 100
+  val_every_steps: 50
+  grad_clip: 1.0
+
+recover:
+  max_retries: 3
+  loss_spike_sigma: 3.0
+  spike_window: 50
+  early_stop_patience: 10
+
+eval:
+  harness_tasks: []
+  milestones: [0.5, 1.0]

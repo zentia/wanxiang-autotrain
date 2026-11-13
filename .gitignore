@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual envs
+.venv/
+venv/
+
+# pytest
+.pytest_cache/
+
+# Training runs & data artifacts
+runs/
+*.bin
+checkpoints/
+*.pt
+
+# Experiment store
+*.db
+
+# OS
+.DS_Store
